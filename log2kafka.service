@@ -1,0 +1,14 @@
+[Unit]
+Description=Log Processing and Kafka Producer
+After=network.target
+
+[Service]
+User=kafka
+Group=confluent
+WorkingDirectory=<path/to/script>
+ExecStart=/usr/bin/python3 <path/to/script/script.py> <path/to/config/config.yaml>
+Restart=always
+RestartSec=3
+
+[Install]
+WantedBy=multi-user.target

@@ -1,0 +1,21 @@
+tail_files_in: 
+  - /path/to/logfile1.log
+  - /path/to/logfile2.log
+  - /path/to/logfile3.log
+record_pattern: "[START]"
+field_delimiter: ","
+field_labels:
+  - field1
+  - field2
+  - field3
+kafka_topic: logs_topic
+key_field: field1
+kafka_config:
+  bootstrap.servers: kafka_broker1:9093,kafka_broker2:9093
+  security.protocol: ssl
+  ssl.ca.location: /path/to/ca_certificate.pem
+  ssl.certificate.location: /path/to/client_certificate.pem
+  ssl.key.location: /path/to/client_key.pem
+  ssl.key.password: password
+  message.send.max.retries: 5
+log_file_path: path/to/error_logfile.log
