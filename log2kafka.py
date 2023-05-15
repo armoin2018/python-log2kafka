@@ -89,4 +89,4 @@ if __name__ == '__main__':
     kafka_conf = config['kafka_config']
     producer = Producer(kafka_conf)
 
-    tail_file(tail_files_in, pattern, delimiter, labels, topic, producer, key_field)
+    process_log_files(tail_files_in, pattern, delimiter, labels, topic, producer, key_field)
